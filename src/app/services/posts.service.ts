@@ -11,7 +11,11 @@ export class PostsService {
   constructor(private httpClient: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>('/api/posts');
+    return this.httpClient.get<Post[]>('/api/posts/');
+  }
+
+  createPost(data: Post): Observable<Post> {
+    return this.httpClient.post<Post>('/api/posts/create', data);
   }
 
 }

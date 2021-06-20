@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="row">
+  <a routerLink="/posts/create">Post Create</a>
+  <div class="row row-cols-12 row-cols-md-4">
     <div class="col" *ngFor="let post of (posts$ | async)">
       <rest-blog-card [data]="post"></rest-blog-card>
     </div>
